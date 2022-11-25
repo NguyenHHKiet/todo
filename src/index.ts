@@ -1,11 +1,14 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+// import { v4 as uuidv4 } from 'uuid';
+// // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+// console.log(uuidv4());
+const list = document.querySelector<HTMLDListElement>('#list');
+const form = document.getElementById('new-task-form') as HTMLFormElement | null;
+const input = document.querySelector<HTMLInputElement>('#new-task-title');
 
-import confetti from 'canvas-confetti';
+form?.addEventListener('click', (e) => {
+  e.preventDefault();
 
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+  if (input?.value == '' || input?.value == null) {
+    console.log('first');
+  }
+});
